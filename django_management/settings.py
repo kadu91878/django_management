@@ -38,11 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_management',
-    # 'django_management.models',
-    # 'django_management.views',
-    # 'django_management.serializers',
     'rest_framework',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,6 +86,7 @@ DATABASES = {
         'PORT': '5432',
         'OPTIONS': {
             'options': '-c search_path=django_management',
+            'client_encoding': 'UTF8',            
         }
     }
 }
