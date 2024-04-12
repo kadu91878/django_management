@@ -7,6 +7,8 @@ from views.projects import (ProjectListCreateAPIView,
 from views.users import UserListCreateAPIView, UserRetrieveUpdateDestroyAPIView
 from views.tasks_view import TasksListCreateAPIView, TasksRetrieveUpdateDestroyAPIView
 from views.teams_view import TeamsListCreateAPIView, TeamsRetrieveUpdateDestroyAPIView
+from views.user_teams_view import UserTeamsListCreateAPIView, UserTeamsRetrieveUpdateDestroyAPIView
+from views.team_info_view import TeamInfoAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +25,7 @@ urlpatterns = [
     path('api/teams/', TeamsListCreateAPIView.as_view(), name='teams-list'),
     path('api/teams/<int:pk>/',
          TeamsRetrieveUpdateDestroyAPIView.as_view(), name='teams-detail'),
+    path('api/userteams/', UserTeamsListCreateAPIView.as_view(), name='user-teams-list'),
+    path('api/userteams/<int:pk>/', UserTeamsRetrieveUpdateDestroyAPIView.as_view(), name='user-teams-detail'),
+    path('api/team-info/<int:team_id>/', TeamInfoAPIView.as_view(), name='team-info'),
 ]
