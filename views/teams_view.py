@@ -11,4 +11,4 @@ class TeamsListCreateAPIView(generics.ListCreateAPIView):
 
 class TeamsRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Teams.objects.all()
-    serializer_class = Teams
+    serializer_class = TeamSerializer
